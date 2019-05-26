@@ -1,0 +1,22 @@
+{
+  "name": "mentoring-infrastructure",
+  "version": "1.0.0",
+  "description": "Mentoring programm: EPAM Infrastructure",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "./node_modules/.bin/eslint index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.epam.com/Oleksandr_Poliakov/mentoring-infrastructure.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "jest": "^24.8.0"
+  }
+}

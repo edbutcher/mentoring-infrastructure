@@ -1,0 +1,49 @@
+stages:
+  - build
+  - lint
+  - test
+  - deploy
+
+image: node:latest
+  
+cache:
+  paths:
+    - node_modules/
+
+build:
+  stage: build
+  tags: [deploy]
+  script:
+    - echo "Build"
+    - npm install
+  artifacts:
+    paths:
+      - node_modules/
+
+lint:
+  stage: lint
+  only:
+  - merge_requests
+  script:
+    - npm lint
+  artifacts:
+    paths:
+      - node_modules/
+
+test:
+  stage: test
+  only:
+  - merge_requests
+  script:
+    - npm test
+  artifacts:
+    paths:
+      - node_modules/
+    
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploy to development"
+  artifacts:
+    paths:
+      - node_modules/
