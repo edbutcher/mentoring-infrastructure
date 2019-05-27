@@ -9,3 +9,15 @@ install:
 script:
   - npm run lint
   - npm run test
+
+deploy:
+  provider: s3
+  access_key_id: AKIAXOB5RLFIHWSYBQUK
+  secret_access_key:
+    secure: b+nctHq9BmPtttit6BSg23xShmo4Eys4EJRuBhmlHfw9j7hS2wRuXozin3FMtXzq7EsAzIwy+9cadgcF3xr+UjhGlAdiZIaW78yiWseBesY7O3Lu0mjOUkMcRRFJ9OSTZmMK35qf2Y3xwWTgMIhiLBL6XtMEEnBBhfS1OC6Nec00wuub7I/cJXZdFe0W8ug2TbDGn0Tr0Kqgi36QX+TYzwVunJ8yY/5WbRdUclU7IVIOPAzfcXOZr4CSGDFAGGhjGiVQleTRQC6TxH9vp7dVkzzG5Easm5djGrk5BMY4CUOCGi1AoBYH3XmLeMLMoV3YwHzTXSFpf3Cnt6fITWF4VaYkDazHCg8tScQkuFo11mfYhXCagQN2VTWlhSVi7yJY8lHUtXMXh8jfWvFyM6l5/gZT1oFC9+60fnX3vHMqYmKGcmLj3UR5rp5a/vIPIXk69ck397rk4DSfOwIsv/eFpCHWjMv2B5jkoIrofTS6u7hFkbxIwFRKCFXGPvdHWWxdN5zyn0D1t3QBxxnt92CN6zOPu3RBjOX4UXKJeb6DPG7DzmPkj0gRJgpdW8mqcPDdOlGQZQxZNHkmAgjyVEG5761xQPGAoffXGXDS+s7LYAeV1TN1SzyQok8t7MANIJIg9fylyxLdzjUJd9nfTtIQknz4+vSFH6ILiYlk/HCeI8U=
+  bucket: edbutcher.travis
+  skip_cleanup: true
+  acl: public_read
+  region: eu-central-1
+  on:
+    repo: edbutcher/mentoring-infrastructure
