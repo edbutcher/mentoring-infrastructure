@@ -1,5 +1,5 @@
 'use strict';
-const component = require('./index');
+const component = require('../index');
 
 describe('Component function create DOM element with text', () => {
   it('return default dom element with text `test`', () => {
